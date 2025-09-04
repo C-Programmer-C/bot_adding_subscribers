@@ -1,0 +1,8 @@
+.env
+*.log
+*.db
+launch.json
+*.xml
+.idea
+tasks.db-shm
+tasks.db-wal
