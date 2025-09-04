@@ -30,8 +30,6 @@ def validate_pyrus_request(request, secret):
     sig = sig.partition('=')[2] if '=' in sig else sig
     if not verify_signature(raw, secret, sig):
         return log_and_abort("invalid signature")
-
-    print(request.headers)
     
     retry = request.headers.get('X-Pyrus-Retry')
     if retry not in ('0/3', '1/3', '2/3', '3/3'):
